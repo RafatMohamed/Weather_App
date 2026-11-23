@@ -28,7 +28,7 @@ cd Weather_App
 flutter pub get
 ```
 
-1. Add your own WeatherAPI key: copy `lib/service/api_keys.example.dart` to `lib/service/api_keys.dart` and paste your key there. That file is gitignored, so the key stays out of version control. Never commit a real key.
+1. Obtain a WeatherAPI key and update the configuration used by `lib/service/service_weather.dart`. The current source embeds a key in the request; rotate exposed credentials and do not publish replacements.
 2. The service calls the `forecast.json` endpoint. Review the current HTTP base URL and use a supported HTTPS configuration before deployment.
 3. Run on a connected device/emulator with internet access.
 
