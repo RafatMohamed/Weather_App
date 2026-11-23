@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:weather_proj/models/weather_model.dart';
 
+import 'api_keys.dart';
+
 class WeatherService {
   Dio dio = Dio(
     BaseOptions(
@@ -23,8 +25,8 @@ class WeatherService {
   );
   final String baseUrl='http://api.weatherapi.com/v1';
   final String endPoint='forecast.json';
-  final String apiKey='5e6ed2285b65436a9f813120231408';
-  // http://api.weatherapi.com/v1/forecast.json?key=5e6ed2285b65436a9f813120231408&q=cairo&days=1
+  final String apiKey=ApiKeys.weatherApiKey;
+  // Request shape: $baseUrl/forecast.json?key=<your key from api_keys.dart>&q=cairo&days=1
 
   Future<WeatherModel> getCurrentWeather({required String cityName}) async {
     try {
